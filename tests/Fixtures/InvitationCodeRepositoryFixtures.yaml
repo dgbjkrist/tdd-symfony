@@ -1,0 +1,5 @@
+App\Entity\InvitationCode:
+    code:
+        description: 'test if InvitationCode is used'
+        code: '14253'
+        expire_at: <datetime("+1 year")>

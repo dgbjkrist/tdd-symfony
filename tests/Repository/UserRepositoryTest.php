@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Repository;
 
 
 use App\DataFixtures\UserFixtures;
@@ -13,14 +13,16 @@ class UserRepositoryTest extends KernelTestCase
 	#THIS TRAIT COMES LIIPTESTFIXTURESBUNDLES WITH METHOD LOADFIXTURES
     use FixturesTrait;
 
-    public function testcount(): void
+    public function testCount(): void
     {
         self::bootKernel();
 
         //$this->loadFixtures([UserFixtures::class]);
-        $this->loadFixtureFiles([
-        	__DIR__.'/UserRepositoryTestFixtures.yaml'
+        /*
+        $users = $this->loadFixtureFiles([
+        	dirname(__DIR__).'/Fixtures/UserRepositoryTestFixtures.yaml'
         ]);
+        */
         $users = self::$container->get(UserRepository::class)->count([]);
         //dd($users);
 
